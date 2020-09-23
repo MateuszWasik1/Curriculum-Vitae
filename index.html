@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mateusz Wąsik">
+    <meta name="description" content="CV">
+    <title>Mateusz Wąsik</title>
+    <link rel="stylesheet"  href="style.css">
+    <script src="https://kit.fontawesome.com/f5980c77b0.js" crossorigin="anonymous" async></script>
+    <noscript>Twoja przeglądarka nie wspiera JavaScript! Strona nie będzie prawidłowo działała!</noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="changelogBody">
+    <input type="button" class="changelogButton" value="Changelog">
+    <div class="changelog hidden" style="display:none">
+        <h4 style="display: inline;">0.70(23.09.2020)</h4>
+        <ol>
+            <li>Widok na mniejsze urządzenia</li>
+        </ol>
+        <h4 style="display: inline;">0.60(22.09.2020)</h4>
+        <ol>
+            <li>Widok na mniejsze urządzenia</li>
+        </ol>
+        <h4 style="display: inline;">0.50(19.09.2020)</h4>
+        <ol>
+            <li>Widok na mniejsze urządzenia</li>
+        </ol>
+        <h4 style="display: inline;">0.30(16.09.2020)</h4>
+        <ol>
+            <li>Widok na mniejsze urządzenia</li>
+        </ol>
+        <h4 style="display: inline;">0.25(14.06.2020)</h4>
+        <ol>
+            <li>Widok na mniejsze urządzenia</li>
+        </ol>
+        <h4 style="display: inline;">0.20(05.06.2020)</h4>
+        <ol>
+            <li>Widok na mniejsze urządzenia</li>
+        </ol>
+        <h4 style="display: inline;">0.15&nbsp;&nbsp;&nbsp;(16.06.2020)</h4>
+        <ol>
+            <li>Praca nad nowym projektem (ciąg dalszy)</li>
+            <li>Przebudowa pozycjonowania na stronie</li>
+        </ol>
+        <h4 style="display: inline;">0.14&nbsp;&nbsp;&nbsp;(15.06.2020)</h4>
+        <ol>
+            <li>Praca nad nowym projektem</li>
+            <li>Przebudowa pozycjonowania na stronie</li>
+        </ol>
+        <h4 style="display: inline;">0.13&nbsp;&nbsp;&nbsp;(04.06.2020) </h4>
+        <ol>
+            <li>Dodanie menu kontaktowego</li>
+            <li>Przebudowa strony o mnie</li>
+        </ol>
+        <h4 style="display: inline;">0.12&nbsp;&nbsp;&nbsp;(03.06.2020) </h4>
+        <ol>
+            <li>Dodanie responsywności na input email w formularzu głównym</li>
+            <li>Naprawa nie działającej technologi w formularzu głównym</li>
+        </ol>
+        <h4 style="display: inline;">0.11&nbsp;&nbsp;&nbsp;(02.06.2020) </h4>
+        <ol>
+            <li>Stworzenie wiele @media dla różnych rozmiarów telefonu/tabletu</li>
+            <li>Naprawa pozycjonowania elementów na stronie</li>
+        </ol>
+        <h4 style="display: inline;">0.1&nbsp;&nbsp;&nbsp;(31.05.2020) </h4>
+        <ol>
+            <li>Stworzenie wyszukiwarki</li>
+            <li>Prace nad naprawą pozycjonowania elementów na stronie</li>
+        </ol>
+        <h4 style="display: inline;">0.09&nbsp;&nbsp;&nbsp;(28.05.2020)</h4>
+        <ol>
+            <li>Skończenie pracy przy WeatherApp</li>
+            <li>Dodanie przycisku powrotu do menu z WeatherApp </li>
+        </ol>
+        <h4 style="display: inline;">0.08&nbsp;&nbsp;&nbsp;(27.05.2020)</h4>
+        <ol>
+            <li>Uzupełnienie i ulepszenie części odnośnika o mnie</li>
+            <li>Edycja todoListy</li>
+            <li>Przycisk przenoszący do menu projektów</li>
+            <li>Rozpoczecie pracy przy WeatherApp z API</li>
+        </ol>
+        <h4 style="display: inline;">0.07&nbsp;&nbsp;&nbsp;(26.05.2020)</h4>
+        <ol>
+            <li>Dodanie części odnośnika o mnie</li>
+        </ol>
+        <h4 style="display: inline;">0.06&nbsp;&nbsp;&nbsp;(25.05.2020)</h4>
+        <ol>
+            <li>ToDoList</li>
+        </ol>
+        <h4 style="display: inline;">0.05&nbsp;&nbsp;&nbsp;(24.05.2020)</h4>
+        <ol>
+            <li>Dodanie timera</li>
+            <li>Modyfikacje @media</li>
+        </ol>
+        <h4 style="display: inline;">0.04&nbsp;&nbsp;&nbsp;(23.05.2020)</h4>
+        <ol>
+            <li>Dodanie changelogu</li>
+            <li>Wstępne dodanie @media dla max-height:700px</li>
+        </ol>
+        <h4 style="display: inline;">0.01 - 0.03</h4>
+        <ol>
+            <li>Stworzenie szkieletu strony</li>
+            <li>Ostylowanie strony</li>
+            <li>Wstępne skryptowanie strony</li>
+        </ol>
+    </div>
+    </div>
+    <div class="popup"><h1>Wypełniając walidator formularza (rejestrując się) nie trzeba podawać prawdziwych danych. Walidator nie jest podpięty do żadnej bazy danych. Można ominąć proces rejestracji klikając w kontynuuj bez logowania.(W przyszłości będzie powiązana rejestracja z założeniem konta dla ułatwienia pewnych rzeczy)</h1><button class="fas fa-times"></button></div><!--Popup informujący o logowaniu i możliwości jego braku -->
+    <form class="form hidden"> <!--formularz rejestracyjny-->
+        <label>Nazwa użytkownika:<br><input type="text" placeholder="Nazwa użytkownika" class="userName"></label><br>
+        <p id = "pUserName" class="error hidden">.</p>
+        <label>hasło:<br><input type="password" placeholder="hasło" class="password"></label><br>
+        <p id = "pPassword" class="error hidden">.</p>
+        <label>Powtórz hasło:<br><input type="password" placeholder="hasło" class="password2"></label><br>
+        <p id = "pPassword2" class="error hidden">.</p>
+        <label>Email:<br><input type="email" placeholder="email" class="email"></label><br>
+        <p id="emailError" class="error hidden">.</p>
+        <label><input type="reset" class="reset" ></label>
+        <label><button class="singIn">Zarejestruj się </button></label><br>
+        <a href="#">Kontynuuj bez logowania</a>
+    </form>
+    <div class="profileDiv hidden">
+        <h1 id="h1"></h1>
+    </div>
+    <nav class="navigator hidden"> <!--navigacja po moich pracach-->
+        <button class="fas fa-user navA aboutMe"> O mnie</button>
+        <button class="navA fas fa-clipboard-list todoListBtn">ToDo List</button>
+        <button class="fas fa-cloud-sun navA weatherBtn" >Weather App</button><!--Klasa navA musi być by "zagłuszać" klasę fas itp-->
+        <button class="navA fas fa-search searchBtn">Wyszukiwarka</button>
+        <button class="fas fa-dollar-sign navA budgetAppBtn hide">Aplikacja budżetowa</button>
+        <!-- <button class="fas fa-calculator navA">Kalkulator</button> -->
+    </nav>
+    <div class="divTimer">
+        <p class="timer" style="display: inline;">Czas użytkownika na stronie:<br>
+            <div class="time">
+                <span class="h"></span><span class="m"></span><span class="s"></span><span class="ms"></span>
+            </div>
+        </p>
+    </div>
+    <div class="todoList hidden">
+        <div class="header">
+            <h1>ToDo List</h1>
+            <input type="text" placeholder="Zadanie">
+            <button>Dodaj</button>
+        </div>
+        <div class="todoBody">
+            <h3>Lista Zadań</h3>
+            <p class="hidden alertInfo">.</p>
+            <ul>
+                <li id='test'>Wypić kawę
+                    <div class="tools">
+                        <button class="complete">
+                            <i class="fas fa-check navA"></i>
+                        </button>
+                        <button class="editList">EDIT</button>
+                        <button class="delete">
+                            <i class="fas fa-times navA"></i>
+                        </button>
+                    </div>
+                </li>
+                <li id='test2'>Zjeść śniadanie
+                    <div class="tools">
+                        <button class="complete">
+                            <i class="fas fa-check navA"></i>
+                        </button>
+                        <button class="editList">EDIT</button>
+                        <button class="delete">
+                            <i class="fas fa-times navA"></i>
+                        </button>
+                        </div>
+                </li>
+                <li id='test3'>Umyć okna
+                    <div class="tools">
+                        <button class="complete">
+                            <i class="fas fa-check navA"></i>
+                        </button>
+                        <button class="editList">EDIT</button>
+                        <button class="delete">
+                            <i class="fas fa-times navA"></i>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="edit">
+            <h3>Edytuj zadanie:</h3>
+            <div class="editBody">
+                <p class="editInfo"></p>
+                <input type="text" class="editInput" placeholder="Wprowadź nową treść zadania...">
+                <button class="editBtn accept">Zatwierdź</button>
+                <button class="editBtn cancel">Anuluj</button>
+            </div>
+        </div>
+    </div> 
+ <!-- Koniec to do listy -->
+    <div class="aboutMePage hidden" style="display: none;">
+        <div class="somethingAboutMe">
+        <p>Cześć, moje imię to <span>Mateusz</span>, jestem 20 letnim zapalonym samoukiem (w większości) technologii <span>front-end'owych</span> Skończyłem technikum w Krakowie o profilu informatycznym uzyskawszy tytuł technika informatyki (Kwalifikacje zawodowe zdane na bardzo wysokie procenty). <span>Codziennie</span> uczę się programować bądź piszę jakiś kod (Jak to obecne CV), jest to dla mnie bardzo przyjemne i lubię to robić. </p><p>Przygodę z "programowaniem" zacząłem pod koniec gimnazjum (2015/2016 r.) od stworzenia pierwszej strony w którą mimo młodego wieku i małej wiedzy włożyłem serce co rzutowało na najwyższą ocenę. Później w 3 klasie technikum zaczęły mi się lekcje programowania które mnie od razu wciągnęły ale nie przykładałem do nich jakiejś większej uwagi. Dopiero <span>z początkiem 2020</span> roku zacząłem się bardzo porządnie uczyć tej dziedziny.</p><p> Uczę się języków znaków: <span>HTML5 </span> i <span>CSS3 </span>, języków programowania: <span>JavaScript</span>. W planach na przyszłość mam zamair nauczyć się <span>Reacta JS</span> (jak dobrze opanuję zwykły JS), na tą porę poznałem go tylko w nikłym stopniu. Gdy już opanuję to wszystko mam w planach uczyć się technologi <span>Back-end'owych</span>. Głównie mam na myśli <span>Node JS</span> oraz <span>NoSQL Database</span>. Ale wydaje mi się to być jeszcze odległą przyszłością. </p> <p><span>Obecnie</span> szukam <span>pracy</span> jako Junior Front-end Developer bądź <span>stażu</span> który pozwoli mi się rozwinąć jako programista oraz zgłębić tajniki pracy w biurze. Mieszkam w <span>Krakowie</span> dlatego chciałbym pracować w tym mieście</p> <p>Byłbym bardzo wdzięczny za jakikolwiek <span>feedback</span>. Pomoże to mi się rozwinąć, ulepszyć <span>CV</span> oraz dowiedzieć się czy to co robię "jakoś wygląda" dla oka bardziej doświadczonego czy jeszcze długa droga przede mną.</p><p>W tym roku rozpoczynam studia na <span>Wyższej Szkole Ekonomii i Informatyki (WSEI)</span> w Krakowie w trybie zaocznym więc za 3,5 roku uzyskam tytuł inżyniera lecz nie zamierzam na tym poprzestać i zdobyć dodatkowego magistra.</p> <br> <br><br><br>
+        </div> 
+        <div class="mySkills">
+                <div>
+                    <div class="circle hover"><i class="fab fa-html5 elements" ></i></div><br><br><br><br>
+                     <span>HTML5</span> <p>Moja wiedza na temat tego     języka znaków jest rozległa, co daje mi łatwość w    tworzeniu stron oraz późniejszym ich stylowaniu oraz   skryptowaniu</p>
+                </div>
+                <div>
+                    <div class="circle hover"><i class="fab  fa-css3-alt elements" ></i></div><br><br><br><br>
+                <span>CSS3</span> <p>CSS opanowałem w bardzo dobrym stopniu, dzięki czemu staram się tworzyć wizualnie   dobre strony internetowe</p>
+                </div>
+                <div>
+                    <div class="circle hover"><i class="fab fa-js-square elements" ></i></div><br><br><br><br>
+                    <span>JS</span> <p>JavaScriptu wciąż się uczę ale   wiele rzeczy przychodzi mi już z łatwością. Gdy   czegoś nie wiem nie boję się wyszukać mojego  problemu w internecie.</p>
+                </div> <br> <br><br>
+                    <span >Tutaj w przyszłości zostaną dodane nowe   umiejętności</span>
+
+        </div> 
+        <div class="contactMeBody" >
+            <h3>Skontaktuj się ze mną</h3>
+            <div class="contactMe">
+                <form action="mailto:mateuszwasikkontakt@gmail.com?subject=Feedback z CV" method="POST">
+                   
+                        <label>Imię: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Imię" id="name"  placeholder="Imię" ></label><br>
+                        <label>Nazwisko: <input type="text" name="Nazwisko" id="lastame" placeholder="Nazwisko"></label><br>
+                        <label>Firma:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="Firma" id="corporation" placeholder="Firma"></label><br>
+                        <label>Feedback:&nbsp;<input type="text" name="Feedback" id="feedback" placeholder="feedback"></label><br>
+                        <input type="submit" value="Wyślij" id="formSendBtn">
+                    
+                </form>
+            </div>
+            <div class="contactInfo ">
+                <h4>Mateusz Wąsik</h4>
+                <h4>tel: 500 492 547</h4>
+                <h4><a href="mailto:mateuszwasikkontakt@gmail.com?subject=CV">mateuszwasikkontakt@gmail.com</a></h4>
+                <h4>Kraków</h4>
+                <div>
+                <a href="https://www.linkedin.com/in/mateusz-w%C4%85sik-311bb61a2/" target="_blank" class="fab fa-linkedin elements hoverLi"></a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <button class="navigatorMenuButton hidden">Lista projektów</button>
+        <div class="weatherAppAll">
+        <div class="hidden weatherApp">
+            <div class="top">
+                <h1>Aplikacja pogodowa</h1>
+                <div class="main-info">
+                    <div>
+                        <h3 class="city-name"></h3>
+                        <input class="weatherInput" type="text" placeholder="Wpisz nazwę miasta..."><button class="weatherButton">Wyślij</button>
+                        <p class="warning"></p>
+                    </div>
+                    <img src="" alt="Obrazek przedstawiający pogodę" class="photo">
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="headings">
+                    <p>Pogoda:</p>
+                    <p>Temperatura:</p>
+                    <p>Opady:</p>
+                </div>
+                <div class="weather-info">
+                    <p class="weather"></p>
+                    <p class="temp"></p>
+                    <p class="humidity"></p>
+                </div>
+            </div>
+    </div>
+    </div>
+    <div class="search hidden">
+        <div class="searchBack">
+            <div class="head">
+                <input type="text" class="searchInput" placeholder="Wyszukaj lub dodaj rzecz">
+                <button id="insideSearchBtn">Dodaj</button>
+                <p class="hidden searchError">.</p>
+            </div>
+            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wyszukane:</h3>
+            <ul id="searchUl">
+                <li>Zabawki</li>
+                <li>Słodycze</li>
+                <li>Napoje</li>
+                <li>Klocki</li>
+                <li>Woda</li>
+                <li>Warzywa</li>
+                <li>Owoce</li>
+                <li>Nabiał</li>
+                <li>Książki</li>
+                <li>Długopisy</li>
+                <li>Agrafki</li>
+                <li>Blok techniczny</li>
+                <li>Herbaty</li>
+                <li>Cukier</li>
+                <li>Sól</li>
+            </ul>
+        </div>
+    </div>
+    <div class="budgetApp hidden">
+        <div class="budgetAppHead">
+            <p style="display:inline">Obecnie posiadasz <span>0</span> złotych</p><br>
+            <input type="number" min="1" placeholder="podaj kwotę">
+        </div>
+        <div class="budgetAppBody">
+
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

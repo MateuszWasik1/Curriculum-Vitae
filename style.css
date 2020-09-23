@@ -1,0 +1,1606 @@
+body{
+    background-color: rgb(65, 182, 255) ;
+    margin: 0;
+    padding: 0;
+}
+.popup{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    z-index: 1;
+}
+.fas , .fa-times{
+    top: 100%;
+    left: 100%;
+    position: absolute;
+}
+.fas, .fa-times button{
+    border-radius: 25%;
+    border: 2px black solid;
+    width: 25px;
+    height: 25px;
+}
+.hidden{
+    visibility: hidden;
+}
+input{
+    background-color:rgb(224, 224, 224);
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(197, 197, 197);
+}
+input.reset{
+    background-color:rgb(0, 122, 204);
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(197, 197, 197);
+    border: 2px solid black;
+    position: relative;
+    top:0;
+    left:0;
+}
+button.singIn{
+    background-color:rgb(0, 122, 204);
+    width: 55%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(197, 197, 197);
+    border: 2px solid black;
+    font-size: 12.9px;
+    position: relative;
+    top:0;
+    left:0;
+}
+input.reset:focus, button.singIn:focus{
+    background-color:rgb(0, 122, 204);
+    border: 2px solid black;
+}
+input.reset:active, button.singIn:active ,input.reset:hover, button.singIn:hover, #formSendBtn:hover{
+    background-color:rgb(0, 92, 153);
+    border: 2px solid black;
+    cursor: pointer;
+}
+form input:focus, form button:focus, .popup button{
+    background-color: rgb(0, 92, 153);
+    border: 2px solid black;
+    outline: none;
+}
+form a{
+color:grey;
+text-decoration: none;
+}
+.form{
+width:300px;
+height: 400px;
+top:50%;
+left:50%;
+position: absolute;
+transform: translate(-50%,-50%);
+z-index: 0;
+}
+.navigator{
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+.navigatorMenuButton{
+    border: none;
+    width: auto;
+    top:93%;
+    left: 2%;
+    text-decoration: none;
+    position: fixed;
+    outline: none;
+    background:none ;
+}
+.profileDiv{
+    top:5%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+.navigator button{
+    float:left;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    font-size: 2em;
+}
+.navA{
+    top: 0;
+    left: 0%;
+    width: auto;
+    height: auto;
+    border:none;
+    position: relative;
+    border-radius: 0px;
+}
+nav button{
+    outline: none;
+}
+nav button:focus:hover{
+    background-color: rgb(0, 92, 153);
+}
+.changelogBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+/* .changelog
+{
+    left: 50%;
+     z tego co widzę nie potrzeny w ogóle jest ta klasa a jeśli w przyszłosći by coś się zepsuło to od tego komentarza naprawiać i usunąć klase changeBody
+     jednak potrzebne było postition:absolute albo byłby sidebar który psuł wizualnie treść strony
+     jednak niestety musi być to wszystko by nie musieć stosować margin-top:np500px który niestety jest mniej uniwersalny
+     sprawa jest bardziej skomplikowana bo sidebar pojawia się przez margin-top. Muszę w odpowiednim miejscu w JS dodać changelog(czy jakoś tak).style.display = "none"
+     jednak bez innych rzeczy cała strona się sypie wiec zostawiam tak jak jest
+     top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    overflow: none;
+}  */
+.changelogButton{
+    border: none;
+    width: auto;
+    top:2%;
+    left: 2%;
+    text-decoration: none;
+    position: absolute;
+    outline: none;
+    background-color:rgb(65, 182, 255) ;
+}
+.divTimer{
+    top:90%;
+    right: 3%;
+    position: fixed;
+}
+.time{
+    text-align: center;
+}
+/* ToDoList*/
+.header{
+    border-radius: 5px 5px 0 0;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(255,0,102,1) 0%, rgba(255,0,102,1) 35%, rgba(224,34,0,1) 75%, rgba(204,17,0,1) 93%, rgba(245,33,0,1) 100%);
+}
+.header input{
+    outline:none;
+    width: 80%;
+    padding: 10px 10px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.header button{
+    border-radius: 5px;
+    color: black;
+    background-color:white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color .3s;
+    padding: 10px 15px;
+    border: 2px solid rgba(82, 82, 82, .4);
+    margin-right: 0px;
+    border-radius: 5px;
+    outline: none;
+}
+.header button:active, .header button:focus, .header button:hover{
+    background-color:rgb(0, 92, 153);
+    border: 2px solid black;
+}
+.todoList{
+    margin-top: 10%;
+    width: 800px;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 4px 4px 5px rgba(82, 82, 82, .4);
+    text-align: center;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%,-40%);
+    transform-origin:top center;
+    /* transform: rotate(45deg); */
+}
+.todoBody li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 15px 15px -15px;
+    padding-left: 20px;
+    text-align: left;
+    list-style: none;
+    background-color:rgb(224, 224, 224);
+    border-radius: 5px;
+}
+.tools {
+    display: inline-block;
+}
+.tools button {
+    padding: 15px 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+.tools button:hover {
+    background-color: #ddd;
+}
+.complete {
+    color: rgb(15, 179, 69);
+}
+.editList {
+    font-weight: bold;
+    color: rgb(255, 153, 0);
+}
+.delete {
+    color: red;
+}
+.completed {
+    font-size: 12px;
+    color: rgb(79, 82, 92);
+    font-style: italic;
+}
+.edit {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    color: rgb(245, 245, 245);
+    background-color:rgb(79, 82, 92);
+    border-radius: 5px;
+}
+.edit h3 {
+    padding: 20px;
+}
+.editInfo {
+    color: rgb(245, 245, 245);
+    margin-bottom: 20px;
+}
+.editBody {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    padding: 10px;
+}
+.editInput {
+    width: 90%;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(79, 82, 92);
+    background-color: rgb(245, 245, 245);
+    outline: none;
+    margin-left: 50px;
+}
+.alertInfo {
+    margin-top: 20px;
+    color: rgb(2, 84, 161);
+    font-size: 20px;
+}
+.editBtn {
+    width: 30%;
+    display: inline-block;
+    padding: 10px 22px;
+    margin: 20px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(26, 26, 26);
+    background-color: rgb(245, 245, 245);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color .3s, background-color .3s;
+    outline: none;
+}
+.editBtn:hover {
+    color: #fff;
+    background-color:  rgb(0, 132, 255);
+}
+/* */
+.aboutMePage{
+    /* oryginalnie
+    top: 50%;
+    left: 50%;
+     transform: translate(-50%,-50%);
+    position: absolute;
+    i bez od display do width
+    */
+    /* margin-top: 200px; */
+    margin: 0 auto;
+    /* top: 50%;
+    left: 25%; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 50%;
+}
+.somethingAboutMe{
+    /* margin-top: 200px; */
+    text-align: justify;
+    text-indent: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    line-height: 25px;
+}
+.somethingAboutMe span{
+ color:white;
+}
+.mySkills{
+    width: 100%;
+    height: 50%;
+    background-color: rgb(200, 200, 200);
+    border-radius: 10px;
+    box-shadow: 10px 10px 12px 5px rgba(0,0,0,0.6);
+    text-align: center;
+    position: relative;
+}
+.mySkills div{
+    position: relative;
+    width: 33%;
+    float: left;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    line-height: 25px;
+}
+.mySkills div span{
+ color:rgb(76, 142, 154);
+position: relative;
+}
+.mySkills span{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    line-height: 25px;
+    color:rgb(247,112,39)
+}
+.mySkills div div.circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #f2f1ed;
+    position: absolute;
+    left:35%;
+}
+.elements{
+    font-size: 4em;
+    text-align:center;
+    margin-top: 12px;
+}
+.hover:hover{
+    font-size: 1.1em;
+}
+.hoverLi:hover{
+    font-size:4.6em;
+}
+.contactMeBody{
+    width:100%;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    flex-wrap: wrap;
+
+
+}
+.contactMe{
+    width: 50%;
+    float: left;
+}
+.contactInfo{
+    text-align: center;
+    width: 50%;
+    float: right;
+}
+.contactMeBody h3{
+    text-align: center;
+}
+.contactInfo h4{
+    line-height: 10px;
+}
+.contactInfo h4 a{
+    color: black;
+}
+.contactMe form{
+    border: 1px solid black;
+    padding: 30px;
+}
+.contactMeBody input{
+    width:72%;
+}
+.fa-linkedin{
+    color: black;
+}
+/* Weather App */
+.weatherAppAll{
+    display: flex;
+    justify-content: center;
+}
+.weatherApp{
+    margin-top: 150px;
+    /* transform: translate(70%,50%); */
+    display: block;
+    /* position: absolute; */
+    width: 800px;
+    height: 400px;
+    background-color:rgb(200, 200, 200);
+    border: 2px solid black;
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0, 0, 0);
+}
+.top{
+     height: 260px;
+}
+
+.bottom{
+    height: 140px;
+}
+
+.main-info{    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.city-name{
+    font-size: 40px;
+    margin:10px;
+    text-align: center;
+}
+
+.headings, .weather-info{
+    display: flex;
+    align-items: center;
+}
+
+.headings p, .weather-info p{
+    width: 33.3%;
+    text-align: center;
+    border-right:2px solid orange;
+}
+
+.headings{
+    height: 35%;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-top: 2px solid orange;
+    border-bottom: 2px solid orange;
+}
+
+.weather-info{
+    height: 50%;
+    font-size: 26px;
+}
+
+.photo{
+    width: 140px;
+    height: 140px;
+}
+
+.warning {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+}
+.weatherButton{
+    padding: 10px;
+    margin-top:5px;
+    margin-left: 40%;
+    transition: (0%,-0%);
+    color: black;
+    font-weight: bold;
+    background: none;
+    border-radius: 5px;
+    border-color: orange;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color .3s, color .3s;
+}
+.weatherButton:hover, .weatherButton:active{
+    background-color:rgb(0, 92, 153);
+    border: 2px solid black;
+    outline: none;
+}
+.weatherButton:focus{
+    outline: none;
+}
+.weatherInput{
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    background: none;
+    border: none;
+    color: black;
+    border-bottom: 2px solid orange;
+}
+.weatherInput::placeholder {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+.weatherApp h1{
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+}
+/* Wyszukiwarka  */
+ .search{
+    margin-top: -500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: roboto;
+ }
+.searchBack{
+    width:50%;
+    height: 600px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 20px;
+
+}
+.searchBack ul{
+    list-style-type: none;
+}
+.head{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(255,0,102,1) 0%, rgba(255,0,102,1) 35%, rgba(224,34,0,1) 75%, rgba(204,17,0,1) 93%, rgba(245,33,0,1) 100%);
+}
+.head input{
+    width: 60%;
+    margin-top:50px;
+    background-color: white;
+    font-family: Roboto;
+    outline: none;
+}
+#insideSearchBtn{
+
+    border-radius: 5px;
+    color: black;
+    background-color:white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color .3s, background-color .3s;
+    padding: 10px 15px;
+    border: 2px solid rgba(82, 82, 82, .4);
+    outline: none;
+}
+#insideSearchBtn:active, #insideSearchBtn:focus, #insideSearchBtn:hover{
+    background-color:rgb(0, 92, 153);
+    border: 2px solid black;
+}
+.budgetApp{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.hide{
+    visibility: hidden;
+}
+/* Media */
+@media (max-width: 1280px) and (orientation:landscape){
+    .aboutMePage{
+        width: 70%;
+    }
+    .navigator{
+        margin-right:-25%
+    }
+    .search{
+        margin-top: -470px;
+        position: absolute;
+        top:0;
+        left:0;
+        transform: translate(15%,80%);
+     }
+    .searchBack{
+        width: 1000px;
+        height: 600px;
+    }
+}
+@media (max-width: 1024px) and (orientation:landscape){
+    body{
+        overflow: hidden;
+    }
+    .aboutMePage{
+        width: 80%;
+    }
+    .navigator{
+        margin-right:-45%
+    }
+    .search{
+        margin-top: -470px;
+        position: absolute;
+        top:0;
+        left:0;
+        transform: translate(0%,80%);
+     }
+    .searchBack{
+        width: 1000px;
+        height: 600px;
+    }
+}
+@media (max-width: 800px) and (orientation:landscape){
+    body{
+        overflow: hidden;
+    }
+.popup h1{
+
+    font-size:18px;
+}
+.contactMeBody{
+    font-size: 14px;
+}
+.fas , .fa-times{
+   left:0;
+}
+.form{
+    width:100%;
+    height: 100px;
+    position: relative;
+    }
+.form input{
+    width:40%;
+    padding:10px;
+    float: left;
+}
+input.reset{
+    width: 40%;
+    padding: 10px;
+    float: left;
+    top:-150px;
+    left:50%;
+}
+button.singIn
+{
+    width: 40%;
+    font-size: 12px;
+    padding: 8px;
+    z-index: 1;
+    float: left;
+    top:-250px;
+    left:10%;
+}
+.navigator{
+    top: 65%;
+    margin-right: 50%;
+}
+.aboutMePage{
+    width: 90%;
+}
+.somethingAboutMe{
+    margin-top: -500px;
+}
+.mySkills div{
+    width: 100%;
+    font-size: 18px;
+    line-height: 25px;
+}
+.mySkills div div.circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left:43%;
+}
+.contactMe{
+    width:100%;
+    float:left;
+}
+.contactInfo{
+    width:100%;
+    float:left;
+}
+.weatherApp{
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translate(0%,-35%);
+    margin-top: 150px;
+    width: 99%;
+    height: 90%;
+}
+.top{
+     height: 65%;
+}
+.bottom{
+    height: 35%;
+}
+.city-name{
+    font-size: 26px;
+    margin:10px;
+    text-align: center;
+}
+.weather-info{
+    font-size: 20px;
+}
+.photo{
+    width: 120px;
+    height: 120px;
+}
+.warning {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+}
+.weatherButton{
+    padding: 7px;
+}
+.search{
+    margin: -470px auto 0 auto;
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translate(10%,80%);
+ }
+.searchBack{
+    width: 660px;
+    height: 600px;
+}
+.todoList{
+    position: absolute;
+    margin-top: 75%;
+    width: 660px;
+    top:-50%;
+}
+}
+@media (max-width: 660px) and (orientation:landscape){
+    body{
+        overflow: hidden;
+    }
+.popup h1{
+    font-size:14px;
+}
+.contactMeBody{
+    font-size: 14px;
+}
+.fas , .fa-times{
+   left:0;
+}
+.form{
+    width:100%;
+    height: 200px;
+    position: relative;
+    }
+    .form input{
+        width:40%;
+        padding:10px;
+        float: left;
+        padding: 7px;
+    }
+    input.reset
+    {
+        width: 40%;
+        padding: 8px;
+        float: left;
+        top:-150px;
+        left:50%;
+    }
+    button.singIn
+    {
+        width: 40%;
+        font-size: 12px;
+        padding: 8px;
+        z-index: 1;
+        float: left;
+        top:-250px;
+        left:10%;
+    }
+    .navigator
+    {
+        top: 65%;
+        margin-right: 50%;
+    }
+    .aboutMePage{
+        width: 90%;
+    }
+    
+    .somethingAboutMe{
+    margin-top: -500px;
+}
+
+.mySkills div{
+    width: 100%;
+    font-size: 18px;
+    line-height: 25px;
+}
+.mySkills div div.circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left:40%;
+}
+.contactMe{
+    width:100%;
+    float:left;
+}
+.contactInfo{
+    width:100%;
+    float:left;
+
+}
+.weatherApp{
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translate(0%,-46%);
+    margin-top: 150px;
+    width: 99%;
+    height: 310px;
+}
+.top{
+     height: 200px;
+}
+.bottom{
+    height: 110px;
+}
+.city-name{
+    font-size: 20px;
+    margin:10px;
+    text-align: center;
+}
+.weather-info{
+    font-size: 15px;
+}
+.photo{
+    width: 120px;
+    height: 120px;
+}
+.warning {
+    margin-top: 10px;
+    font-size: 10px;
+    color: red;
+}
+.weatherButton{
+    padding: 5px;
+}
+.search{
+    margin-top: -470px;
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translate(0%,80%);
+ }
+.searchBack{
+    width: 560px;
+    height: 600px;
+}
+.todoList{
+    position: absolute;
+    margin-top: 90%;
+    width: 500px;
+    top:-50%;
+}
+.profileDiv{
+    top:5%;
+    left: 30%;
+    position: absolute;
+    transform: translate(50%,-50%);
+    z-index:0;
+    font-size:10px;
+}
+}
+@media (max-width: 560px)  and (orientation:landscape) {
+    body{
+        overflow: hidden;
+    }
+.popup h1{
+    font-size:14px;
+}
+.contactMeBody{
+    font-size: 14px;
+}
+.fas , .fa-times{
+   left:0;
+}
+.form{
+    width:100%;
+    height: 200px;
+    position: relative;
+    }
+    .form input{
+        width:40%;
+        padding:10px;
+        float: left;
+        padding: 7px;
+    }
+    input.reset
+    {
+        width: 40%;
+        padding: 8px;
+        float: left;
+        top:-150px;
+        left:50%;
+    }
+    button.singIn
+    {
+        width: 40%;
+        font-size: 12px;
+        padding: 8px;
+        z-index: 1;
+        float: left;
+        top:-250px;
+        left:10%;
+    }
+    .divTimer{
+        z-index: -10;
+    }
+    .navigator
+    {
+        top: 65%;
+        margin-right: 50%;
+    }
+    .aboutMePage{
+        width: 90%;
+    }
+    
+    .somethingAboutMe{
+    margin-top: -500px;
+}
+
+.mySkills div{
+    width: 100%;
+    font-size: 18px;
+    line-height: 25px;
+}
+.mySkills div div.circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left:38%;
+}
+.contactMe{
+    width:100%;
+    float:left;
+}
+.contactInfo{
+    width:100%;
+    float:left;
+}
+.weatherApp{
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translate(0%,-46%);
+    margin-top: 150px;
+    width: 99%;
+    height: 310px;
+}
+.top{
+     height: 200px;
+}
+.bottom{
+    height: 110px;
+}
+.city-name{
+    font-size: 20px;
+    margin:10px;
+    text-align: center;
+}
+.weather-info{
+    font-size: 15px;
+}
+.photo{
+    width: 120px;
+    height: 120px;
+}
+.warning {
+    margin-top: 10px;
+    font-size: 10px;
+    color: red;
+}
+.weatherButton{
+    padding: 5px;
+}
+.search{
+    margin-top: -470px;
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translate(1%,80%);
+ }
+.searchBack{
+    width: 470px;
+    height: 600px;
+}
+.todoList{
+    position: absolute;
+    margin-top: 90%;
+    width: 500px;
+    top:-50%;
+}
+.profileDiv{
+    top:5%;
+    left: 30%;
+    position: absolute;
+    transform: translate(-0%,-50%);
+    z-index:2;
+    font-size:14px;
+}
+}
+@media (max-width: 2000px)  and (orientation:portrait) {
+    .aboutMePage
+    {
+        width: 90%;
+    }
+    .search{
+        margin-top: -470px;
+     }
+    .searchBack{
+        width:70%;
+        height: 600px;
+    }
+}
+@media (max-width: 1000px)  and (orientation:portrait) {
+    body{
+        overflow-x: hidden;
+    }
+    .contactMe{
+        width:100%;
+        float:left;
+    }
+    .contactInfo{
+        width:100%;
+        float:left;
+        text-align: center;
+        word-wrap:break-word;
+
+    }
+    .mySkills div
+{
+    width: 100%;
+    float: left;
+    font-size: 24px;
+}
+.mySkills div div.circle
+{
+    height:35%;
+    width: 45%;
+    border-radius: 50%;
+    background-color: #f2f1ed;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+.navigator
+{
+    top: 50%;
+    margin-right: 50%;
+    font-size: 1.5em
+}
+.aboutMePage
+{
+    width: 90%;
+}
+
+.somethingAboutMe
+{
+    margin-top: -80px;
+}
+
+.mySkills div
+{
+    width: 33%;
+    font-size: 18px;
+    line-height: 25px;
+}
+.mySkills div div.circle
+{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left:50%;
+}
+.search{
+    margin-top: -470px;
+ }
+.searchBack{
+    width:100%;
+    height: 600px;
+}
+}
+@media (max-width: 700px)  and (orientation:portrait) {
+    body{
+        overflow: hidden;
+    }
+.popup h1{
+    font-size:26px;
+}
+.contactMeBody{
+    font-size: 14px;
+}
+.fas , .fa-times{
+   left:100%;
+}
+
+ .contactMe input{
+     width:100%;
+     margin-left:0
+    }
+     .contactMe form{
+         padding-left: 15px;
+     }
+     .mySkills div div.circle{
+         height:35%;
+         width: 45%;
+     }
+     .navigator{
+         top: 60%;
+         left:-20%;
+         font-size: 1.5em
+     }
+     .mySkills div{
+    width: 100%;
+    font-size: 18px;
+    line-height: 25px;
+    }
+    .mySkills div div.circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left:50%;
+}
+.search{
+    margin-top: -470px;
+ }
+.searchBack{
+    width:100%;
+    height: 600px;
+}
+}
+@media (max-width: 600px)  and (orientation:portrait) {
+    body{
+        overflow: hidden;
+    }
+.popup h1{
+    font-size:20px;
+}
+.contactMeBody{
+    font-size: 14px;
+}
+.fas , .fa-times{
+   left:100%;
+}
+
+    .contactMe form{
+        padding-left: 2px;
+    }
+    .navigator
+    {
+        top: 60%;
+        left:-20%;
+        font-size: 1.5em
+    }
+    .weatherApp{
+        margin-top: 150px;
+        width: 800px;
+        height: 400px;
+    }
+    .top{
+         height: 260px;
+    }
+
+    .bottom{
+        height: 140px;
+    }
+     
+    .city-name{
+        font-size: 40px;
+        margin:10px;
+        text-align: center;
+    }
+
+    .weather-info{
+        height: 50%;
+        font-size: 26px;
+    }
+    
+    .photo{
+        width: 140px;
+        height: 140px;
+    }
+    
+    .warning {
+        margin-top: 10px;
+        font-size: 14px;
+        color: red;
+    }
+    .search{
+        margin-top: -470px;
+     }
+    .searchBack{
+        width:100%;
+        height: 600px;
+    }
+    .todoList{
+        position: absolute;
+        margin-top: 120%;
+        width: 600px;
+        top:-50%;
+    }
+}
+@media (max-width: 500px)  and (orientation:portrait) {
+    .navigator{
+        top: 60%;
+        left:-50%;
+        font-size: 1.5em
+    }
+.aboutMePage
+{
+    width: 90%;
+}
+
+.somethingAboutMe
+{
+    margin-top: -80px;
+}
+
+.mySkills div
+{
+    width: 100%;
+    font-size: 18px;
+    line-height: 25px;
+}
+.mySkills div div.circle
+{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left:50%;
+}
+.weatherApp{
+    margin-top: -100px;
+    width: 100%;
+    height: 700px;
+}
+.top{
+     height: 60%;
+}
+.bottom{
+    height: 40%;
+}
+.city-name{
+    font-size: 30px;
+}
+.weather-info{
+    height: 50%;
+    font-size: 20px;
+}
+.warning {
+    margin-top: 10px;
+    font-size: 18px;
+    color: red;
+}
+.search{
+    margin-top: -470px;
+ }
+.searchBack{
+    width:100%;
+    height: 600px;
+}
+.todoList{
+    position: absolute;
+    margin-top: 170%;
+    width: 410px;
+    top:-50%;
+}
+}
+@media (max-width: 400px)  and (orientation:portrait) {
+    body{
+        overflow: hidden;
+    }
+    .popup{
+        top:50%;
+    }
+.popup h1{
+    font-size:14px;
+}
+.contactMeBody{
+    font-size: 14px;
+}
+.fas , .fa-times{
+   top: 100%;
+   left:0;
+}
+.form{
+width:100%;
+height: 450px;
+}
+.form input{
+    width:92%;
+    padding:10px;
+}
+input.reset
+{
+    width: 40%;
+    padding: 8px;
+}
+button.singIn
+{
+    width: 55%;
+    font-size: 12px;
+    padding: 8px;
+    z-index: 1;
+}
+.divTimer{
+    z-index: -10;
+}
+.navigator
+{
+    top: 60%;
+    left:50%;
+    font-size: 1em
+}
+.aboutMePage
+{
+    width: 90%;
+}
+
+.somethingAboutMe
+{
+    margin-top: -80px;
+}
+
+.mySkills div
+{
+    width: 100%;
+    font-size: 18px;
+    line-height: 25px;
+}
+.mySkills div div.circle
+{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left:50%;
+}
+.todoList{
+    position: absolute;
+    margin-top: 170%;
+    width: 300px;
+    top:-50%;
+}
+.weatherApp{
+    margin-top: -100px;
+    width: 100%;
+    height: 480px;
+}
+.top{
+     height: 280px;
+}
+.bottom{
+    height: 200px;
+}
+.city-name{
+    font-size: 30px;
+}
+.weather-info{
+    height: 50%;
+    font-size: 20px;
+}
+.warning {
+    margin-top: 10px;
+    font-size: 12px;
+    color: red;
+}
+.search{
+    margin-top: -470px;
+ }
+.searchBack{
+    width:100%;
+    height: 600px;
+}
+.profileDiv{
+    top:10%;
+    left: 20%;
+    position: absolute;
+    transform: translate(-0%,-50%);
+    z-index:2;
+}
+}
+/*  */
+ /* @media (min-width:10px) and (max-width:1000px){ */
+/* .form
+{
+    width:100px;
+    height: 600px;
+}
+.aboutMePage
+{
+    margin-top: 1600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+.somethingAboutMe
+{
+    margin-top: 200px;
+    text-align: justify;
+    text-indent: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    line-height: 25px;
+}
+.mySkills
+{
+    width: 100%;
+    height: 1150px;
+    background-color: rgb(00, 200, 200);
+    border-radius: 10px;
+    box-shadow: 10px 10px 12px 5px rgba(0,0,0,0.6);
+    text-align: center;
+    position: relative;
+}
+.mySkills div
+{
+    position: relative;
+    width: 100%;
+    float: left;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    line-height: 25px;
+    clear: both;
+}
+.mySkills div span
+{
+ color:rgb(76, 142, 154)
+}
+.mySkills span
+{
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    line-height: 25px;
+}
+.circle
+{
+    height: 100px;
+    width: 100px;
+    border-radius: 90%;
+    background-color: #f2f1ed;
+    position: relative;
+    left:0%; */
+    /* .search
+    {
+        margin-top: -600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-family: roboto;
+     }
+    .searchBack
+    {
+        width:100%;
+        height: 800px;
+        background-color: rgb(200, 200, 200);
+        border-radius: 20px;
+
+    }
+    .searchBack ul
+    {
+        list-style-type: none;
+    }
+    .head
+    {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(135deg, rgba(255,0,102,1) 0%, rgba(255,0,102,1) 35%, rgba(224,34,0,1) 75%, rgba(204,17,0,1) 93%, rgba(245,33,0,1) 100%);
+    }
+    .head input
+    {
+        width: 60%;
+        margin-top:50px;
+        background-color: white;
+        font-family: Roboto;
+        outline: none;
+    }
+    #insideSearchBtn
+    {
+
+        border-radius: 5px;
+        color: black;
+        background-color:white;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: color .3s, background-color .3s;
+        padding: 10px 15px;
+        border: 2px solid rgba(82, 82, 82, .4);
+        outline: none;
+    }
+    #insideSearchBtn:active, #insideSearchBtn:focus, #insideSearchBtn:hover
+    {
+        background-color:rgb(0, 92, 153);
+        border: 2px solid black;
+    }
+}
+ @media (min-width:1001px) and (max-width:1500px){
+     .search
+{
+    margin-top: -500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: roboto;
+ }
+.searchBack
+{
+    width:75%;
+    height: 600px;
+    background-color: rgb(200, 200, 200);
+    border-radius: 20px;
+
+}
+.searchBack ul
+{
+    list-style-type: none;
+}
+.head
+{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(255,0,102,1) 0%, rgba(255,0,102,1) 35%, rgba(224,34,0,1) 75%, rgba(204,17,0,1) 93%, rgba(245,33,0,1) 100%);
+}
+.head input
+{
+    width: 60%;
+    margin-top:50px;
+    background-color: white;
+    font-family: Roboto;
+    outline: none;
+}
+#insideSearchBtn
+{
+
+    border-radius: 5px;
+    color: black;
+    background-color:white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color .3s, background-color .3s;
+    padding: 10px 15px;
+    border: 2px solid rgba(82, 82, 82, .4);
+    outline: none;
+}
+#insideSearchBtn:active, #insideSearchBtn:focus, #insideSearchBtn:hover
+{
+    background-color:rgb(0, 92, 153);
+    border: 2px solid black;
+}
+} */
