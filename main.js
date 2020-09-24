@@ -485,7 +485,7 @@ let weatherAPI = () =>{
         
     })
     .catch(() =>{ warning.textContent = "Podaj poprawną nazwę miasta"
-    photo.setAttribute("src", "../obrazkiWA/unknown.png");
+    photo.setAttribute("src", "obrazkiWA/unknown.png");
     cityName.textContent = "Nieznane";
 })}
     let weatherCheck = () =>{if(event.keyCode === 13){weatherAPI()}}
