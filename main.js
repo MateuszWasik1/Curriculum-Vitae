@@ -477,7 +477,7 @@ let weatherAPI = () =>{
         else if(status.id >=500 && status.id < 600){photo.setAttribute("src", "obrazkiWA/rain.jpg")}
         else if(status.id >=600 && status.id < 700){photo.setAttribute("src", "obrazkiWA/snow.png")}
         else if(status.id >=700 && status.id < 800){photo.setAttribute("src", "obrazkiWA/fog.png")}
-        else if(status.id == 800 ){photo.setAttribute("src", "../obrazkiWA/sun.jpg")}
+        else if(status.id == 800 ){photo.setAttribute("src", "obrazkiWA/sun.jpg")}
         else if(status.id >=801 && status.id < 900){photo.setAttribute("src", "obrazkiWA/cloud.png")}
         else{photo.setAttribute("src", "obrazkiWA/unknown.jpg")}
         warning.textContent =""
