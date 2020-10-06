@@ -37,6 +37,7 @@ let searchLi = [...document.querySelectorAll("#searchUl li")];
 let emailRegexp = /^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*@([a-zA-Z0-9_-]+)(\.[a-zA-Z0-9_-]+)*(\.[a-zA-Z]{2,4})$/i;
 let budgetAppBtn = document.querySelector(".budgetAppBtn");
 let budgetApp = document.querySelector(".budgetApp");
+let inputs = document.querySelectorAll(".input")
 
 
 let userNameError = () =>{ //sprawdza czy nazwa ma więcej niż 2 znaki
@@ -404,7 +405,7 @@ let deleteTask = (e) =>
         $alertInfo.innerHTML = 'Brak zadań na liście';
     }
 }
-let enterCheck = () =>
+let enterCheck = (event) =>
 {
     if(event.keyCode === 13)
     {
@@ -422,6 +423,9 @@ let aboutMe = ()=>{
     aboutMePage.style.marginBottom = "-350px"
     document.body.style.overflowY = "visible";
     form.style.height = "400px";
+    inputs.forEach(el => {
+        el.classList.remove("input")
+    });
 }
 profileBtn.addEventListener("click", aboutMe)
 //nasłuchiwanie na przycisk który z projektów odsyła nas do menu
@@ -472,14 +476,14 @@ let weatherAPI = () =>{
         temperature.textContent = Math.ceil(temp) + '°C';
         humidity.textContent = hum + '%' ;
 
-        if(status.id >= 200 && status.id < 300 ){photo.setAttribute("src", "thunderstorm.jpg")}
-        else if(status.id >=300 && status.id < 400){photo.setAttribute("src", "drizzle.png")}
-        else if(status.id >=500 && status.id < 600){photo.setAttribute("src", "rain.jpg")}
-        else if(status.id >=600 && status.id < 700){photo.setAttribute("src", "snow.png")}
-        else if(status.id >=700 && status.id < 800){photo.setAttribute("src", "fog.png")}
-        else if(status.id == 800 ){photo.setAttribute("src", "sun.jpg")}
-        else if(status.id >=801 && status.id < 900){photo.setAttribute("src", "cloud.png")}
-        else{photo.setAttribute("src", "unknown.jpg")}
+        if(status.id >= 200 && status.id < 300 ){photo.setAttribute("src", "obrazkiWA/thunderstorm.jpg")}
+        else if(status.id >=300 && status.id < 400){photo.setAttribute("src", "obrazkiWA/drizzle.png")}
+        else if(status.id >=500 && status.id < 600){photo.setAttribute("src", "obrazkiWA/rain.jpg")}
+        else if(status.id >=600 && status.id < 700){photo.setAttribute("src", "obrazkiWA/snow.png")}
+        else if(status.id >=700 && status.id < 800){photo.setAttribute("src", "obrazkiWA/fog.png")}
+        else if(status.id == 800 ){photo.setAttribute("src", "obrazkiWA/sun.jpg")}
+        else if(status.id >=801 && status.id < 900){photo.setAttribute("src", "obrazkiWA/cloud.png")}
+        else{photo.setAttribute("src", "obrazkiWA/unknown.jpg")}
         warning.textContent =""
         weatherInput.value = ""
         

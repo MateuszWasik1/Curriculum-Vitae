@@ -662,7 +662,7 @@ position: relative;
     height: 100px;
     position: relative;
     }
-.form input{
+.input{
     width:40%;
     padding:10px;
     float: left;
@@ -684,6 +684,7 @@ button.singIn
     top:-250px;
     left:10%;
 }
+/* !!! */
 .navigator{
     top: 65%;
     margin-right: 50%;
@@ -692,8 +693,9 @@ button.singIn
     width: 90%;
 }
 .somethingAboutMe{
-    margin-top: -500px;
+    margin-top: -500px; 
 }
+/* !!!! */
 .mySkills div{
     width: 100%;
     font-size: 18px;
@@ -784,7 +786,7 @@ button.singIn
     height: 200px;
     position: relative;
     }
-    .form input{
+    .input{
         width:40%;
         padding:10px;
         float: left;
@@ -920,12 +922,12 @@ button.singIn
     height: 200px;
     position: relative;
     }
-    .form input{
-        width:40%;
-        padding:10px;
-        float: left;
-        padding: 7px;
-    }
+.input{
+    width:40%;
+    padding:10px;
+    float: left;
+    padding: 7px;
+}
     input.reset
     {
         width: 40%;
